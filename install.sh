@@ -285,8 +285,8 @@ Restart=on-abort
 [Install]
 WantedBy=multi-user.target
 EOL
-sudo systemctl enable northernd
-sudo systemctl start northernd
+sudo systemctl enable northern.service
+sudo systemctl start northern.service
 
 clear
 
