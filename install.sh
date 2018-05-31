@@ -299,19 +299,7 @@ WantedBy=multi-user.target
 EOL
 sudo systemctl enable northern.service
 sudo systemctl start northern.service
-EOL
 
-echo "Your masternode is syncing. Please wait for this process to finish."
-echo "This can take up to a few hours. Do not close this window." && echo ""
-
-until su -c "northern-cli mnsync status 2>/dev/null | grep '\"IsBlockchainSynced\" : true' > /dev/null" $USER; do
-  for (( i=0; i<${#CHARS}; i++ )); do
-    sleep 2
-    echo -en "${CHARS:$i:1}" "\r"
-  done
-done
-
-clear
 
 cat << EOL
 
