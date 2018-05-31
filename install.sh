@@ -303,24 +303,13 @@ sudo systemctl start northern.service
 
 cat << EOL
 
-Now, you need to start your masternode. Please go to your desktop wallet and
-enter the following line into your debug console:
-
-startmasternode alias false <mymnalias>
-
-where <mymnalias> is the name of your masternode alias (without brackets)
-
+Now, you need to start your masternode. Please go to your desktop wallet
+Click the Masternodes tab
+Click Start all at the bottom 
 EOL
 
 read -p "Press Enter to continue after you've done that. " -n1 -s
 
 clear
-
-sleep 1
-su -c "/usr/local/bin/northern-cli startmasternode local false" $USER
-sleep 1
-clear
-su -c "/usr/local/bin/northern-cli masternode status" $USER
-sleep 5
 
 echo "" && echo "Masternode setup completed." && echo ""
