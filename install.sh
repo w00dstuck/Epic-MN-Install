@@ -233,12 +233,12 @@ fi
 
 # Install NORT daemon
 wget $TARBALLURL
-tar -xzvf $TARBALLNAME && mv bin $BWKVERSION
+tar -xzvf $TARBALLNAME 
 rm $TARBALLNAME
-cp ./$BWKVERSION/northernd /usr/local/bin
-cp ./$BWKVERSION/northern-cli /usr/local/bin
-cp ./$BWKVERSION/northern-tx /usr/local/bin
-rm -rf $BWKVERSION
+mv ./northernd /usr/local/bin
+mv ./northern-cli /usr/local/bin
+mv ./northern-tx /usr/local/bin
+rm -rf $TARBALLNAME
 
 # Create .northern directory
 mkdir $USERHOME/.northern
