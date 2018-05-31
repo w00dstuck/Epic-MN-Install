@@ -227,7 +227,7 @@ if [[ ("$UFW" == "y" || "$UFW" == "Y" || "$UFW" == "") ]]; then
   ufw default deny incoming
   ufw default allow outgoing
   ufw allow ssh
-  ufw allow 52543/tcp
+  ufw allow 6942/tcp
   yes | ufw enable
 fi
 
