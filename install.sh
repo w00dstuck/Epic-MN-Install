@@ -300,6 +300,7 @@ EOL
 sudo systemctl enable northern.service
 sudo systemctl start northern.service
 
+clear
 
 cat << EOL
 
