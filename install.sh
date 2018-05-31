@@ -250,7 +250,7 @@ fi
 
 # Create northern.conf
 touch $USERHOME/.northern/northern.conf
-cat > $USERHOME/.norhtern/northern.conf << EOL
+cat > $USERHOME/.northern/northern.conf << EOL
 ${INSTALLERUSED}
 rpcuser=${RPCUSER}
 rpcpassword=${RPCPASSWORD}
