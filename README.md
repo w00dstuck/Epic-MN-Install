@@ -1,5 +1,5 @@
 # Northern-MN-Install
-## System requirements
+## System requirements - USE AN UBUNTU LINUX 16.04 VPS for best results
 
 The VPS you plan to install your masternode on needs to have at least 1GB of RAM and 10GB of free disk space. We do not recommend using servers who do not meet those criteria, and your masternode will not be stable. We also recommend you do not use elastic cloud services like AWS or Google Cloud for your masternode - to use your node with such a service would require some networking knowledge and manual configuration.
 
