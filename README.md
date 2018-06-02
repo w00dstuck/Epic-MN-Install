@@ -1,4 +1,5 @@
-# Northern-MN-Install
+# Northern-Masternode-Guide
+
 ## System requirements - USE AN UBUNTU LINUX 16.04 VPS for best results
 
 The VPS you plan to install your masternode on needs to have at least 1GB of RAM and 10GB of free disk space. We do not recommend using servers who do not meet those criteria, and your masternode will not be stable. We also recommend you do not use elastic cloud services like AWS or Google Cloud for your masternode - to use your node with such a service would require some networking knowledge and manual configuration.
@@ -9,13 +10,13 @@ The VPS you plan to install your masternode on needs to have at least 1GB of RAM
 
   - Open your NORT wallet and switch to the "Receive" tab.
 
-  - Click into the label field and create a label, I will use MN1
+  - Click into the label field and create a label, I will use "MN1"
 
   - Now click on "Request payment"
 
   - The generated address will now be labelled as MN1 If you want to setup more masternodes just repeat the steps so you end up with several addresses for the total number of nodes you wish to setup. Example: For 10 nodes you will need 10 addresses, label them all.
 
-  - Once all addresses are created send 2500 NORT each to them. Ensure that you send exactly 5000 NORT and do it in a single transaction. You can double check where the coins are coming from by checking it via coin control usually, that's not an issue.
+  - Once all addresses are created send 2500 NORT each to them. Ensure that you send exactly 2500 NORT and do it in a single transaction. You can double check where the coins are coming from by checking it via coin control usually, that's not an issue.
 
 * As soon as all 2.5K transactions are done, we will wait for 15 confirmations. You can check this in your wallet or use the explorer. It should take around 30 minutes if all transaction have 15 confirmations
 
@@ -48,7 +49,7 @@ Close your wallet and open the Northern Appdata folder. Its location depends on 
 In your appdata folder, open masternode.conf with a text editor and add a new line in this format to the bottom of the file:
 
 ```bash
-masternodename ipaddress:52543 genkey collateralTxID outputID
+masternodename ipaddress:6942 genkey collateralTxID outputID
 ```
 
 An example would be
@@ -64,7 +65,7 @@ Restart and unlock your wallet.
 SSH (Putty on Windows, Terminal.app on macOS) to your VPS, login as root (**Please note:** It's normal that you don't see your password after typing or pasting it) and run the following command:
 
 ```bash
-bash <( curl https://raw.githubusercontent.com/Northern-crypto/Northern-MN-Install/master/install.sh )
+bash <( curl https://raw.githubusercontent.com/zabtc/Northern-MN-Install/master/install.sh )
 ```
 
 When the script asks, confirm your VPS IP Address and paste your masternode key (You can copy your key and paste into the VPS if connected with Putty by right clicking)
@@ -84,6 +85,9 @@ This can take up to a few hours. Do not close this window.
 
 Once you see "Masternode setup completed." on screen, you are done.
 
+
+### If you have any issues, please be sure to join our Discord and ask for support:
+### https://discord.gg/9nzt37V
 
 
 ## Non-interactive installation
