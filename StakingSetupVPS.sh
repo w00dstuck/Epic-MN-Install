@@ -61,6 +61,8 @@ echo "addnode=149.56.4.243" >> northern.conf
 echo "addnode=149.56.4.242" >> northern.conf
 echo "addnode=149.56.4.241" >> northern.conf
 echo "port=6942" >> northern.conf
+mv northern.conf .northern
+
   
 cd
 ./northernd -daemon
