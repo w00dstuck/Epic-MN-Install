@@ -85,6 +85,12 @@ This can take up to a few hours. Do not close this window.
 
 Once you see "Masternode setup completed." on screen, you are done.
 
+### To check your masternode status on your VPS, navigate to /usr/local/bin and then run 
+
+```bash
+./northern-cli masternode status
+```
+
 
 ### If you have any issues, please be sure to join our Discord and ask for support:
 ### https://discord.gg/9nzt37V
