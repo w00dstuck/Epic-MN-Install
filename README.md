@@ -96,6 +96,36 @@ Once you see "Masternode setup completed." on screen, you are done.
 ### https://discord.gg/9nzt37V
 
 
+## For Windows setups, use this config in your masternode.conf or northern.conf (depending on if you are using a VPS or local wallet)
+
+```bash
+rpcuser=<RANDOMUSERNAME>
+rpcpassword=<RANDOMPASSWORD>
+rpcallowip=127.0.0.1
+listen=1
+server=1
+daemon=1
+logtimestamps=1
+maxconnections=256
+externalip=<IPADDRESS>
+masternodeaddr=<IPADDRESS>:6942
+masternodeprivkey=<MASTERNODE GENKEY>
+masternode=1
+addnode=207.246.69.246
+addnode=209.250.233.104
+addnode=45.77.82.101
+addnode=138.68.167.127
+addnode=45.77.218.53
+addnode=207.246.86.118
+addnode=128.199.44.28
+addnode=139.59.164.167
+addnode=139.59.177.56
+addnode=206.189.58.89
+addnode=207.154.202.113
+addnode=140.82.54.227
+```
+
+
 ## Non-interactive installation
 
 You can use the installer in a non-interactive mode by using command line arguments - for example, if you want to automate the installation. This requires that you download the installer and run it locally. Here are the arguments you can pass to `install.sh`:
