@@ -88,6 +88,7 @@ Once you see "Masternode setup completed." on screen, you are done.
 ### To check your masternode status on your VPS, navigate to /usr/local/bin and then run 
 
 ```bash
+cd /usr/local/bin
 ./northern-cli masternode status
 ```
 
