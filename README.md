@@ -85,7 +85,7 @@ This can take up to a few hours. Do not close this window.
 
 Once you see "Masternode setup completed." on screen, you are done.
 
-### To check your masternode status on your VPS, navigate to /usr/local/bin and then run 
+### To check your masternode status on your VPS, navigate to /usr/local/bin (this is where the script moves files) 
 
 ```bash
 cd /usr/local/bin
