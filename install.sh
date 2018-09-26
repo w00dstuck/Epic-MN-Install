@@ -55,7 +55,7 @@ case $key in
     -h|--help)
     cat << EOL
 
-NORT Masternode installer arguments:
+EPIC Masternode installer arguments:
 
     -n --normal               : Run installer in normal mode
     -a --advanced             : Run installer in advanced mode
@@ -82,9 +82,9 @@ set -- "${POSITIONAL[@]}" # restore positional parameters
 
 clear
 
-# Set these to change the version of northern to install
-TARBALLURL="https://github.com/zabtc/Northern/releases/download/1.0.0/northern-1.0.0-x86_64-linux-gnu.tar.gz"
-TARBALLNAME="northern-1.0.0-x86_64-linux-gnu.tar.gz"
+# Set these to change the version of epic to install
+TARBALLURL="https://github.com/EpicCrypto/Epic/releases/download/2.0.0/epic-2.0.0-x86_64-linux-gnu.tar.gz"
+TARBALLNAME="epic-2.0.0-x86_64-linux-gnu.tar.gz"
 BOOTSTRAPURL=""
 BOOTSTRAPARCHIVE=""
 BWKVERSION="1.0.0"
@@ -131,7 +131,7 @@ echo "
  |               installation method.               |::
  |                                                  |::
  |  Otherwise, your masternode will not work, and   |::
- | the NORT Team CANNOT assist you in repairing  |::
+ | the EPIC Team CANNOT assist you in repairing  |::
  |         it. You will have to start over.         |::
  |                                                  |::
  +------------------------------------------------+::
@@ -148,13 +148,13 @@ fi
 
 if [[ ("$ADVANCED" == "y" || "$ADVANCED" == "Y") ]]; then
 
-USER=northern
+USER=epic
 
 adduser $USER --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password > /dev/null
 
 INSTALLERUSED="#Used Advanced Install"
 
-echo "" && echo 'Added user "northern"' && echo ""
+echo "" && echo 'Added user "epic"' && echo ""
 sleep 1
 
 else
@@ -220,26 +220,26 @@ if [[ ("$UFW" == "y" || "$UFW" == "Y" || "$UFW" == "") ]]; then
   yes | ufw enable
 fi
 
-# Install NORT daemon
+# Install EPIC daemon
 wget $TARBALLURL
 tar -xzvf $TARBALLNAME 
 rm $TARBALLNAME
-mv ./northernd /usr/local/bin
-mv ./northern-cli /usr/local/bin
-mv ./northern-tx /usr/local/bin
+mv ./epicd /usr/local/bin
+mv ./epic-cli /usr/local/bin
+mv ./epic-tx /usr/local/bin
 rm -rf $TARBALLNAME
 
-# Create .northern directory
-mkdir $USERHOME/.northern
+# Create .epic directory
+mkdir $USERHOME/.epic
 
 # Install bootstrap file
 if [[ ("$BOOTSTRAP" == "y" || "$BOOTSTRAP" == "Y" || "$BOOTSTRAP" == "") ]]; then
   echo "skipping"
 fi
 
-# Create northern.conf
-touch $USERHOME/.northern/northern.conf
-cat > $USERHOME/.northern/northern.conf << EOL
+# Create epic.conf
+touch $USERHOME/.epic/epic.conf
+cat > $USERHOME/.epic/epic.conf << EOL
 ${INSTALLERUSED}
 rpcuser=${RPCUSER}
 rpcpassword=${RPCPASSWORD}
@@ -250,44 +250,36 @@ daemon=1
 logtimestamps=1
 maxconnections=256
 externalip=${IP}
-bind=${IP}:6942
+bind=${IP}:1255
 masternodeaddr=${IP}
 masternodeprivkey=${KEY}
 masternode=1
-addnode=207.246.69.246
-addnode=209.250.233.104
-addnode=45.77.82.101
-addnode=138.68.167.127
-addnode=45.77.218.53
-addnode=207.246.86.118
-addnode=128.199.44.28
-addnode=139.59.164.167
-addnode=139.59.177.56
-addnode=206.189.58.89
-addnode=207.154.202.113
-addnode=140.82.54.227
+addnode=108.61.193.88
+addnode=45.32.230.63
+addnode=45.32.129.61
+addnode=149.28.200.19
 EOL
-chmod 0600 $USERHOME/.northern/northern.conf
-chown -R $USER:$USER $USERHOME/.northern
+chmod 0600 $USERHOME/.epic/epic.conf
+chown -R $USER:$USER $USERHOME/.epic
 
 sleep 1
 
-cat > /etc/systemd/system/northern.service << EOL
+cat > /etc/systemd/system/epic.service << EOL
 [Unit]
-Description=northernd
+Description=epicd
 After=network.target
 [Service]
 Type=forking
 User=${USER}
 WorkingDirectory=${USERHOME}
-ExecStart=/usr/local/bin/northernd -conf=${USERHOME}/.northern/northern.conf -datadir=${USERHOME}/.northern
-ExecStop=/usr/local/bin/northern-cli -conf=${USERHOME}/.northern/northern.conf -datadir=${USERHOME}/.northern stop
+ExecStart=/usr/local/bin/epicd -conf=${USERHOME}/.epic/epic.conf -datadir=${USERHOME}/.epic
+ExecStop=/usr/local/bin/epic-cli -conf=${USERHOME}/.epic/epic.conf -datadir=${USERHOME}/.epic stop
 Restart=on-abort
 [Install]
 WantedBy=multi-user.target
 EOL
-sudo systemctl enable northern.service
-sudo systemctl start northern.service
+sudo systemctl enable epic.service
+sudo systemctl start epic.service
 
 clear
 
