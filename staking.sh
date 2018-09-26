@@ -37,7 +37,7 @@ sudo ufw limit ssh/tcp
 sudo ufw logging on
 echo "y" | sudo ufw enable
 sudo ufw status
-sudo ufw allow 6942/tcp
+sudo ufw allow 1255/tcp
   
 cd
 mkdir -p .epic
