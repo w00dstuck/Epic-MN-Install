@@ -133,3 +133,12 @@ You can use the installer in a non-interactive mode by using command line argume
 --no-bootstrap            : Don't use Bootstrap
 -h --help                 : Display this help text.
 ```
+
+## If you would like to contribute to the EPIC Coin Project, please feel free to send to our donation addresses.
+**BTC** - 3N5GpiPp8BE64H86ZcAzmWLfQLZ7ExznEE
+
+**ETH** - 0x438C8321DbC3E1c9801F605D2793F2944D17AAa1
+
+**LTC** - MRXpuPeKeZsedT6CpT9VaHRbqeveUPZD6N 
+
+**EPIC** - eBjDFke8pX87YoXWiQCpeTRANjiP25HCuJ
