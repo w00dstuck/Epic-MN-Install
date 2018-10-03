@@ -115,6 +115,14 @@ masternode=1
 
 ```
 
+## Donations are welcomed if you found this guide helpful.
+**BTC** - 3N5GpiPp8BE64H86ZcAzmWLfQLZ7ExznEE
+
+**ETH** - 0x438C8321DbC3E1c9801F605D2793F2944D17AAa1
+
+**LTC** - MRXpuPeKeZsedT6CpT9VaHRbqeveUPZD6N 
+
+**EPIC** - eBjDFke8pX87YoXWiQCpeTRANjiP25HCuJ
 
 ## Non-interactive installation
 
@@ -133,12 +141,3 @@ You can use the installer in a non-interactive mode by using command line argume
 --no-bootstrap            : Don't use Bootstrap
 -h --help                 : Display this help text.
 ```
-
-## Donations are welcomed if you found this guide helpful.
-**BTC** - 3N5GpiPp8BE64H86ZcAzmWLfQLZ7ExznEE
-
-**ETH** - 0x438C8321DbC3E1c9801F605D2793F2944D17AAa1
-
-**LTC** - MRXpuPeKeZsedT6CpT9VaHRbqeveUPZD6N 
-
-**EPIC** - eBjDFke8pX87YoXWiQCpeTRANjiP25HCuJ
