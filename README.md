@@ -1,6 +1,6 @@
 # Epic-Masternode-Guide
 
-## System requirements - USE AN UBUNTU LINUX 16.04 VPS for best results ($5/mo from <a href="https://www.vultr.com/?ref=7356599">Vultr</a>)
+## System requirements - USE AN UBUNTU LINUX 16.04 VPS for best results ($5/mo from <a href="https://www.vultr.com/?ref=7356599">Vultr</a> is recommended)
 
 The VPS you plan to install your masternode on needs to have at least 1GB of RAM and 10GB of free disk space. We do not recommend using servers who do not meet those criteria, and your masternode will not be stable. We also recommend you do not use elastic cloud services like AWS or Google Cloud for your masternode - to use your node with such a service would require some networking knowledge and manual configuration.
 
@@ -134,7 +134,7 @@ You can use the installer in a non-interactive mode by using command line argume
 -h --help                 : Display this help text.
 ```
 
-## If you would like to contribute to the EPIC Coin Project, please feel free to send to our donation addresses.
+## Donations are welcomed if you found this guide helpful.
 **BTC** - 3N5GpiPp8BE64H86ZcAzmWLfQLZ7ExznEE
 
 **ETH** - 0x438C8321DbC3E1c9801F605D2793F2944D17AAa1
