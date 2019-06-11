@@ -225,14 +225,14 @@ fi
 wget $TARBALLURL
 unzip $TARBALLNAME 
 rm $TARBALLNAME
+chmod 777 ./$TARMAPNAME/epicd
+chmod 777 ./$TARMAPNAME/epic-cli
+chmod 777 ./$TARMAPNAME/epic-tx
 mv ./$TARMAPNAME/epicd /usr/local/bin
 mv ./$TARMAPNAME/epic-cli /usr/local/bin
 mv ./$TARMAPNAME/epic-tx /usr/local/bin
 rm -rf $TARBALLNAME
 rm -rf $TARMAPNAME
-chmod 777 epicd
-chmod 777 epic-cli
-chmod 777 epic-tx
 
 # Create .epic directory
 mkdir $USERHOME/.epic
