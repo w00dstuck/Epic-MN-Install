@@ -83,8 +83,9 @@ set -- "${POSITIONAL[@]}" # restore positional parameters
 clear
 
 # Set these to change the version of epic to install
-TARBALLURL="https://github.com/EpicCrypto/Epic/releases/download/2.0.0/epic-2.0.0-x86_64-linux-gnu.tar.gz"
-TARBALLNAME="epic-2.0.0-x86_64-linux-gnu.tar.gz"
+TARBALLURL="https://bitbucket.org/ultra-pool/epic-core/downloads/Epic-linux-3.0-compiled.zip"
+TARBALLNAME="Epic-linux-3.0-compiled.zip"
+TARMAPNAME="Epic-linux-3.0-compiled"
 BOOTSTRAPURL=""
 BOOTSTRAPARCHIVE=""
 BWKVERSION="1.0.0"
@@ -222,12 +223,16 @@ fi
 
 # Install EPIC daemon
 wget $TARBALLURL
-tar -xzvf $TARBALLNAME 
+unzip $TARBALLNAME 
 rm $TARBALLNAME
-mv ./epicd /usr/local/bin
-mv ./epic-cli /usr/local/bin
-mv ./epic-tx /usr/local/bin
+mv ./$TARMAPNAME/epicd /usr/local/bin
+mv ./$TARMAPNAME/epic-cli /usr/local/bin
+mv ./$TARMAPNAME/epic-tx /usr/local/bin
 rm -rf $TARBALLNAME
+rm -rf $TARMAPNAME
+chmod 777 epicd
+chmod 777 epic-cli
+chmod 777 epic-tx
 
 # Create .epic directory
 mkdir $USERHOME/.epic
@@ -250,7 +255,7 @@ daemon=1
 logtimestamps=1
 maxconnections=256
 externalip=${IP}
-bind=${IP}:1255
+# bind=${IP}:1255
 masternodeaddr=${IP}
 masternodeprivkey=${KEY}
 masternode=1
